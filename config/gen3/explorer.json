@@ -1,0 +1,185 @@
+[
+  {
+    "tabTitle": "Subjects",
+    "charts": {
+      "data_contributor_id": {
+        "chartType": "fullPie",
+        "title": "Data Contributor",
+        "label": {
+          "show": true
+        },
+        "showLegendInChart": false
+      },
+      "data_source": {
+        "chartType": "horizontalStacked",
+        "title": "Data Source"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Subject",
+          "fields": [
+            "data_contributor_id",
+            "data_source",
+            "last_known_survival_status",
+            "lkss_obfuscated",
+            "year_at_disease_phase",
+            "age_last_contact_normalized"
+          ]
+        },
+        {
+          "title": "Demographics",
+          "fields": [
+            "Demographics.sex",
+            "Demographics.race",
+            "Demographics.ethnicity"
+          ]
+        },
+        {
+          "title": "Disease",
+          "fields": [
+            "DiseaseCharacteristics.diabetes_status",
+            "DiseaseCharacteristics.diet"
+          ]
+        },
+        {
+          "title": "Treatment",
+          "fields": [
+            "Treatment.medication_name",
+            "Treatment.dm_medication_class"
+          ]
+        },
+        {
+          "title": "Testing",
+          "fields": [
+            "Testing.test_type",
+            "Testing.result_interpretation"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "pageLimit": {
+        "limit": 10000
+      },
+      "fields": [
+        "honest_broker_subject_id",
+        "data_contributor_id",
+        "data_source",
+        "last_known_survival_status",
+        "age_last_contact_normalized",
+        "year_at_disease_phase"
+      ],
+      "columns": {
+        "honest_broker_subject_id": {
+          "sortable": false
+        }
+      }
+    },
+    "dropdowns": {
+      "download-table": {
+        "title": "Download Table",
+        "leftIcon": "gen3:download",
+        "rightIcon": "gen3:chevron-down",
+        "dropdownItems": [
+          {
+            "enabled": true,
+            "type": "data-json",
+            "title": "JSON",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-json",
+            "actionArgs": {
+              "filename": "predict_subjects.json"
+            }
+          },
+          {
+            "enabled": true,
+            "type": "data-csv",
+            "title": "CSV",
+            "leftIcon": "datafile",
+            "rightIcon": "download",
+            "action": "data-csv",
+            "actionArgs": {
+              "filename": "predict_data_table.csv"
+            }
+          }
+        ]
+      }
+    },
+    "buttons": [],
+    "loginForDownload": false,
+    "guppyConfig": {
+      "dataType": "subject",
+      "nodeCountTitle": "Subjects",
+      "fieldMapping": [
+        {
+          "field": "honest_broker_subject_id",
+          "name": "Honest Broker Subject ID"
+        },
+        {
+          "field": "data_contributor_id",
+          "name": "Data Contributor"
+        },
+        {
+          "field": "data_source",
+          "name": "Data Source"
+        },
+        {
+          "field": "last_known_survival_status",
+          "name": "Last Known Survival Status"
+        },
+        {
+          "field": "lkss_obfuscated",
+          "name": "LKSS (obfuscated)"
+        },
+        {
+          "field": "year_at_disease_phase",
+          "name": "Year at Disease Phase"
+        },
+        {
+          "field": "age_last_contact_normalized",
+          "name": "Age at Last Contact"
+        },
+        {
+          "field": "Demographics.sex",
+          "name": "Sex"
+        },
+        {
+          "field": "Demographics.race",
+          "name": "Race"
+        },
+        {
+          "field": "Demographics.ethnicity",
+          "name": "Ethnicity"
+        },
+        {
+          "field": "DiseaseCharacteristics.diabetes_status",
+          "name": "Diabetes Status"
+        },
+        {
+          "field": "DiseaseCharacteristics.diet",
+          "name": "Diet"
+        },
+        {
+          "field": "Treatment.medication_name",
+          "name": "Medication Name"
+        },
+        {
+          "field": "Treatment.dm_medication_class",
+          "name": "Diabetes Medication Class"
+        },
+        {
+          "field": "Testing.test_type",
+          "name": "Test Type"
+        },
+        {
+          "field": "Testing.result_interpretation",
+          "name": "Result Interpretation"
+        }
+      ]
+    }
+  }
+]

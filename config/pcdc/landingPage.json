@@ -1,0 +1,61 @@
+{
+  "body": [
+    {
+      "title": {
+        "text": "Pediatric Cancer Data Commons",
+        "level": 2
+      }
+    },
+    {
+      "splitarea": {
+        "left": [
+          {
+            "text": "The Pediatric Cancer Data Commons supports the management, analysis and sharing of data for the research community."
+          },
+          {
+            "link": {
+              "href": "/Submission",
+              "linkType": "portal",
+              "text": "Submit Data"
+            }
+          },
+          {
+            "text": "The PCDC harnesses pediatric, AYA, and adult cancer clinical data from around the world into a single unified platform, making it possible to explore and access data across multiple types of cancer."
+          }
+        ],
+        "right": [
+          {
+            "image": {
+              "src": "/images/pcdc/logo-watermark.png",
+              "alt": "Pediatric Cancer Data Commons"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "break": "standard"
+    },
+    {
+      "cardsArea": {
+        "title": "",
+        "cards": [
+          {
+            "icon": "MdOutlineSearch",
+            "bodyText": "The Pediatric Cancer Data Commons defines the data. Please study the dictionary before you start browsing.",
+            "btnText": "Learn more",
+            "href": "/DataDictionary",
+            "linkType": "portal"
+          },
+          {
+            "icon": "MdOutlineBarChart",
+            "bodyText": "The Exploration Page gives you insights and a clear overview under selected factors.",
+            "btnText": "Explore data",
+            "href": "/Explorer",
+            "linkType": "portal"
+          }
+        ]
+      }
+    }
+  ]
+}

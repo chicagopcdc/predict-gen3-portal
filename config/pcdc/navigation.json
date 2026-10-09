@@ -1,0 +1,50 @@
+{
+  "navigation": {
+    "hideUnauthorizedLinks": false,
+    "classNames": {
+      "root": "pl-1 mr-6 bg-base-max text-primary opacity-100 hover:opacity-100 data-disabled:opacity-35 data-disabled:hover:text-primary data-disabled:hover:opacity-35",
+      "item": "py-2 px-4 hover:bg-base-lightest hover:text-base-contrast",
+      "navigationPanel": "bg-base-max text-primary",
+      "icon": "data-disabled:opacity-50"
+    },
+    "logo": {
+      "src": "/images/pcdc/logo.png",
+      "width": 180,
+      "height": 60,
+      "href": "/"
+    },
+    "items": [
+      {
+        "icon": "gen3:dictionary",
+        "href": "/DataDictionary",
+        "name": "Dictionary",
+        "tooltip": {
+          "authorized": "View the Pediatric Cancer Data Commons data dictionary."
+        }
+      },
+      {
+        "icon": "gen3:exploration",
+        "href": "/Explorer",
+        "name": "Exploration",
+        "tooltip": {
+          "authorized": "Explore Pediatric Cancer Data Commons data."
+        }
+      }
+    ]
+  },
+  "topBar": {
+    "items": [
+      {
+        "icon": "gen3:external-link",
+        "href": "https://commons.cri.uchicago.edu/pcdc/",
+        "name": "About PCDC"
+      },
+      {
+        "icon": "gen3:external-link",
+        "href": "https://commons.cri.uchicago.edu/sponsors/",
+        "name": "Our Sponsors"
+      }
+    ],
+    "loginButtonVisibility": "visible"
+  }
+}

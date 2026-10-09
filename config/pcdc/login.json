@@ -1,0 +1,25 @@
+{
+  "topContent": [
+    {
+      "text": "Pediatric Cancer Data Commons",
+      "className": "text-center text-3xl font-bold"
+    },
+    {
+      "text": "Connect. Share. Cure.",
+      "className": "text-center text-xl font-medium"
+    }
+  ],
+  "bottomContent": [
+    {
+      "type": "markdown",
+      "text": "Welcome to the Pediatric Cancer Data Commons (PCDC), brought to you by Data for the Common Good (D4CG). Headquartered at the University of Chicago, D4CG works with international leaders to develop and apply uniform data standards that facilitate the collection, combination, and analysis of data from many different sources.\n\nThe PCDC harnesses pediatric, AYA, and adult cancer clinical data from around the world into a single unified platform, making it possible to explore and access data across multiple types of cancer. The PCDC Data Portal currently includes some of the world's largest sets of clinical data for pediatric neuroblastoma, soft tissue sarcoma, germ cell tumors, AML, and Hodgkin lymphoma, with the addition of more cancer types in progress.",
+      "className": "text-center text-sm max-w-4xl mx-auto"
+    },
+    {
+      "type": "markdown",
+      "text": "If you have any questions about access or the registration process, please contact [pcdc_help@lists.uchicago.edu](mailto:pcdc_help@lists.uchicago.edu).",
+      "className": "text-center text-sm"
+    }
+  ],
+  "showCredentialsLogin": true
+}

@@ -1,0 +1,36 @@
+{
+  "classNames": {
+    "root": "bg-base-darker",
+    "layout": "flex items-center justify-end"
+  },
+  "rightSection": {
+    "columns": [
+      {
+        "rows": [
+          {
+            "Icon": {
+              "logo": "/images/pcdc/gen3.png",
+              "width": 132,
+              "height": 60,
+              "description": "Gen3 Data Commons",
+              "href": "https://ctds.uchicago.edu/gen3"
+            }
+          }
+        ]
+      },
+      {
+        "rows": [
+          {
+            "Icon": {
+              "logo": "/images/pcdc/uchicago.png",
+              "width": 180,
+              "height": 36,
+              "description": "The University of Chicago",
+              "href": "https://www.uchicago.edu/"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
