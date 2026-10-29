@@ -6,7 +6,7 @@ import {
   type ExplorerPageProps,
 } from '@gen3/frontend';
 
-import SavedFilterSetsPanel from '@/components/SavedFilterSetsPanel';
+
 import { registerCohortTableCustomCellRenderers } from '@/lib/CohortBuilder/CustomCellRenderers';
 import { registerCustomExplorerDetailsPanels } from '@/lib/CohortBuilder/FileDetailsPanel';
 
@@ -41,7 +41,6 @@ export default function ExplorerPage({
       headerMetadata={headerMetadata}
     >
       <div className="flex w-full flex-col">
-        <SavedFilterSetsPanel />
         <CohortBuilder
           tabsLayout={tabsLayout}
           explorerConfig={explorerConfig}
