@@ -2,15 +2,21 @@
   {
     "tabTitle": "PREDICT Subjects",
     "charts": {
-      "data_source": {
-        "chartType": "fullPie",
-        "title": "Subjects by Data Source",
-        "label": { "show": true },
-        "showLegendInChart": false
+      "Demographics.sex": {
+        "chartType": "horizontalStacked",
+        "title": "Sex"
+      },
+      "Demographics.race": {
+        "chartType": "horizontalStacked",
+        "title": "Race"
+      },
+      "Demographics.ethnicity": {
+        "chartType": "horizontalStacked",
+        "title": "Ethnicity"
       },
       "data_contributor_id": {
         "chartType": "horizontalStacked",
-        "title": "Subjects by Data Contributor"
+        "title": "Data Contributor"
       }
     },
     "filters": {
