@@ -1,18 +1,16 @@
 [
   {
-    "tabTitle": "Subjects",
+    "tabTitle": "PREDICT Subjects",
     "charts": {
-      "data_contributor_id": {
+      "data_source": {
         "chartType": "fullPie",
-        "title": "Data Contributor",
-        "label": {
-          "show": true
-        },
+        "title": "Subjects by Data Source",
+        "label": { "show": true },
         "showLegendInChart": false
       },
-      "data_source": {
+      "data_contributor_id": {
         "chartType": "horizontalStacked",
-        "title": "Data Source"
+        "title": "Subjects by Data Contributor"
       }
     },
     "filters": {
@@ -52,15 +50,12 @@
         },
         {
           "title": "Testing",
-          "fields": [
-            "Testing.test_type",
-            "Testing.result_interpretation"
-          ]
+          "fields": ["Testing.test_type", "Testing.result_interpretation"]
         }
       ]
     },
     "table": {
-      "enabled": true,
+      "enabled": false,
       "pageLimit": {
         "limit": 10000
       },
@@ -78,42 +73,11 @@
         }
       }
     },
-    "dropdowns": {
-      "download-table": {
-        "title": "Download Table",
-        "leftIcon": "gen3:download",
-        "rightIcon": "gen3:chevron-down",
-        "dropdownItems": [
-          {
-            "enabled": true,
-            "type": "data-json",
-            "title": "JSON",
-            "leftIcon": "datafile",
-            "rightIcon": "download",
-            "action": "data-json",
-            "actionArgs": {
-              "filename": "predict_subjects.json"
-            }
-          },
-          {
-            "enabled": true,
-            "type": "data-csv",
-            "title": "CSV",
-            "leftIcon": "datafile",
-            "rightIcon": "download",
-            "action": "data-csv",
-            "actionArgs": {
-              "filename": "predict_data_table.csv"
-            }
-          }
-        ]
-      }
-    },
     "buttons": [],
     "loginForDownload": false,
     "guppyConfig": {
       "dataType": "subject",
-      "nodeCountTitle": "Subjects",
+      "nodeCountTitle": "PREDICT Subjects",
       "fieldMapping": [
         {
           "field": "honest_broker_subject_id",
