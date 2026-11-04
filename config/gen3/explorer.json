@@ -33,6 +33,23 @@
           ]
         },
         {
+          "title": "Timing",
+          "fields": [
+            "Timing.timepoint",
+            "Timing.timing_age_at_normalized",
+            "Timing.age_unit",
+            "Timing.age_precision"
+          ]
+        },
+        {
+          "title": "Family Medical History",
+          "fields": [
+            "FamilyMedicalHistory.relation",
+            "FamilyMedicalHistory.condition",
+            "FamilyMedicalHistory.source"
+          ]
+        },
+        {
           "title": "Demographics",
           "fields": [
             "Demographics.sex",
@@ -41,22 +58,98 @@
           ]
         },
         {
+          "title": "Medical History",
+          "fields": [
+            "MedicalHistory.age_at_normalized",
+            "MedicalHistory.age_unit",
+            "MedicalHistory.age_precision",
+            "MedicalHistory.medical_history_condition"
+          ]
+        },
+        {
+          "title": "Biometrics",
+          "fields": [
+            "Biometrics.age_at_normalized",
+            "Biometrics.age_unit",
+            "Biometrics.age_precision",
+            "Biometrics.measurement_type",
+            "Biometrics.measurement_numeric",
+            "Biometrics.measurement_unit",
+            "Biometrics.z_score"
+          ]
+        },
+        {
+          "title": "Biospecimen",
+          "fields": [
+            "Biospecimen.sample_type"
+          ]
+        },
+        {
+          "title": "Genetic Analysis",
+          "fields": [
+            "GeneticAnalysis.age_at_normalized",
+            "GeneticAnalysis.age_unit",
+            "GeneticAnalysis.age_precision",
+            "GeneticAnalysis.causative_alteration",
+            "GeneticAnalysis.status",
+            "GeneticAnalysis.cytogenetic_location",
+            "GeneticAnalysis.gene",
+            "GeneticAnalysis.alteration_type",
+            "GeneticAnalysis.alteration_effect",
+            "GeneticAnalysis.alteration_region",
+            "GeneticAnalysis.hgvs_coding",
+            "GeneticAnalysis.hgvs_protein",
+            "GeneticAnalysis.hgvs_genomic",
+            "GeneticAnalysis.iscn",
+            "GeneticAnalysis.reported_significance",
+            "GeneticAnalysis.allelic_state",
+            "GeneticAnalysis.maf_numeric",
+            "GeneticAnalysis.mosaicism"
+          ]
+        },
+        {
+          "title": "Testing",
+          "fields": [
+            "Testing.test_type",
+            "Testing.result_interpretation",
+            "Testing.age_at_normalized",
+            "Testing.age_unit",
+            "Testing.age_precision",
+            "Testing.testing_measurement_type",
+            "Testing.result_numeric",
+            "Testing.result_unit",
+            "Testing.fasting_status"
+          ]
+        },
+        {
           "title": "Disease",
           "fields": [
             "DiseaseCharacteristics.diabetes_status",
-            "DiseaseCharacteristics.diet"
+            "DiseaseCharacteristics.diet",
+            "DiseaseCharacteristics.age_at_normalized",
+            "DiseaseCharacteristics.age_unit",
+            "DiseaseCharacteristics.age_precision",
+            "DiseaseCharacteristics.hypoglycemia_frequency",
+            "DiseaseCharacteristics.severe_hypoglycemia_frequency",
+            "DiseaseCharacteristics.dka",
+            "DiseaseCharacteristics.time_in_range",
+            "DiseaseCharacteristics.cgm_range"
           ]
         },
         {
           "title": "Treatment",
           "fields": [
             "Treatment.medication_name",
-            "Treatment.dm_medication_class"
+            "Treatment.dm_medication_class",
+            "Treatment.age_at_start_normalized",
+            "Treatment.age_at_stop_normalized",
+            "Treatment.age_unit",
+            "Treatment.age_precision",
+            "Treatment.medication_code",
+            "Treatment.medication_concentration",
+            "Treatment.medication_dose",
+            "Treatment.medication_unit"
           ]
-        },
-        {
-          "title": "Testing",
-          "fields": ["Testing.test_type", "Testing.result_interpretation"]
         }
       ]
     },
@@ -148,6 +241,246 @@
         {
           "field": "Testing.result_interpretation",
           "name": "Result Interpretation"
+        },
+        {
+          "field": "Timing.timepoint",
+          "name": "Timepoint"
+        },
+        {
+          "field": "Timing.timing_age_at_normalized",
+          "name": "Age At"
+        },
+        {
+          "field": "Timing.age_unit",
+          "name": "Age Unit"
+        },
+        {
+          "field": "Timing.age_precision",
+          "name": "Age Precision"
+        },
+        {
+          "field": "FamilyMedicalHistory.relation",
+          "name": "Relation"
+        },
+        {
+          "field": "FamilyMedicalHistory.condition",
+          "name": "Condition"
+        },
+        {
+          "field": "FamilyMedicalHistory.source",
+          "name": "Source"
+        },
+        {
+          "field": "MedicalHistory.age_at_normalized",
+          "name": "Age At"
+        },
+        {
+          "field": "MedicalHistory.age_unit",
+          "name": "Age Unit"
+        },
+        {
+          "field": "MedicalHistory.age_precision",
+          "name": "Age Precision"
+        },
+        {
+          "field": "MedicalHistory.medical_history_condition",
+          "name": "Medical History Condition"
+        },
+        {
+          "field": "Biometrics.age_at_normalized",
+          "name": "Age At"
+        },
+        {
+          "field": "Biometrics.age_unit",
+          "name": "Age Unit"
+        },
+        {
+          "field": "Biometrics.age_precision",
+          "name": "Age Precision"
+        },
+        {
+          "field": "Biometrics.measurement_type",
+          "name": "Measurement Type"
+        },
+        {
+          "field": "Biometrics.measurement_numeric",
+          "name": "Measurement Numeric"
+        },
+        {
+          "field": "Biometrics.measurement_unit",
+          "name": "Measurement Unit"
+        },
+        {
+          "field": "Biometrics.z_score",
+          "name": "Z-Score"
+        },
+        {
+          "field": "Biospecimen.sample_type",
+          "name": "Sample Type"
+        },
+        {
+          "field": "GeneticAnalysis.age_at_normalized",
+          "name": "Age At"
+        },
+        {
+          "field": "GeneticAnalysis.age_unit",
+          "name": "Age Unit"
+        },
+        {
+          "field": "GeneticAnalysis.age_precision",
+          "name": "Age Precision"
+        },
+        {
+          "field": "GeneticAnalysis.causative_alteration",
+          "name": "Causative Alteration"
+        },
+        {
+          "field": "GeneticAnalysis.status",
+          "name": "Status"
+        },
+        {
+          "field": "GeneticAnalysis.cytogenetic_location",
+          "name": "Cytogenetic Location"
+        },
+        {
+          "field": "GeneticAnalysis.gene",
+          "name": "Gene"
+        },
+        {
+          "field": "GeneticAnalysis.alteration_type",
+          "name": "Alteration Type"
+        },
+        {
+          "field": "GeneticAnalysis.alteration_effect",
+          "name": "Alteration Effect"
+        },
+        {
+          "field": "GeneticAnalysis.alteration_region",
+          "name": "Alteration Region"
+        },
+        {
+          "field": "GeneticAnalysis.hgvs_coding",
+          "name": "HGVS Coding"
+        },
+        {
+          "field": "GeneticAnalysis.hgvs_protein",
+          "name": "HGVS Protein"
+        },
+        {
+          "field": "GeneticAnalysis.hgvs_genomic",
+          "name": "HGVS Genomic"
+        },
+        {
+          "field": "GeneticAnalysis.iscn",
+          "name": "ISCN"
+        },
+        {
+          "field": "GeneticAnalysis.reported_significance",
+          "name": "Reported Significance"
+        },
+        {
+          "field": "GeneticAnalysis.allelic_state",
+          "name": "Allelic State"
+        },
+        {
+          "field": "GeneticAnalysis.maf_numeric",
+          "name": "MAF"
+        },
+        {
+          "field": "GeneticAnalysis.mosaicism",
+          "name": "Mosaicism"
+        },
+        {
+          "field": "Testing.age_at_normalized",
+          "name": "Age At"
+        },
+        {
+          "field": "Testing.age_unit",
+          "name": "Age Unit"
+        },
+        {
+          "field": "Testing.age_precision",
+          "name": "Age Precision"
+        },
+        {
+          "field": "Testing.testing_measurement_type",
+          "name": "Testing Measurement Type"
+        },
+        {
+          "field": "Testing.result_numeric",
+          "name": "Result Numeric"
+        },
+        {
+          "field": "Testing.result_unit",
+          "name": "Result Unit"
+        },
+        {
+          "field": "Testing.fasting_status",
+          "name": "Fasting Status"
+        },
+        {
+          "field": "DiseaseCharacteristics.age_at_normalized",
+          "name": "Age At"
+        },
+        {
+          "field": "DiseaseCharacteristics.age_unit",
+          "name": "Age Unit"
+        },
+        {
+          "field": "DiseaseCharacteristics.age_precision",
+          "name": "Age Precision"
+        },
+        {
+          "field": "DiseaseCharacteristics.hypoglycemia_frequency",
+          "name": "Hypoglycemia Frequency"
+        },
+        {
+          "field": "DiseaseCharacteristics.severe_hypoglycemia_frequency",
+          "name": "Severe Hypoglycemia Frequency"
+        },
+        {
+          "field": "DiseaseCharacteristics.dka",
+          "name": "DKA"
+        },
+        {
+          "field": "DiseaseCharacteristics.time_in_range",
+          "name": "Time In Range"
+        },
+        {
+          "field": "DiseaseCharacteristics.cgm_range",
+          "name": "CGM Range"
+        },
+        {
+          "field": "Treatment.age_at_start_normalized",
+          "name": "Age At Start"
+        },
+        {
+          "field": "Treatment.age_at_stop_normalized",
+          "name": "Age At Stop"
+        },
+        {
+          "field": "Treatment.age_unit",
+          "name": "Age Unit"
+        },
+        {
+          "field": "Treatment.age_precision",
+          "name": "Age Precision"
+        },
+        {
+          "field": "Treatment.medication_code",
+          "name": "Medication Code"
+        },
+        {
+          "field": "Treatment.medication_concentration",
+          "name": "Medication Concentration"
+        },
+        {
+          "field": "Treatment.medication_dose",
+          "name": "Medication Dose"
+        },
+        {
+          "field": "Treatment.medication_unit",
+          "name": "Medication Unit"
         }
       ]
     }
