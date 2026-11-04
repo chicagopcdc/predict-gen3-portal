@@ -2,7 +2,7 @@
   "body": [
     {
       "title": {
-        "text": "Gen3 Data Platform Dynamic Configuration",
+        "text": "PREDICT Common",
         "level": 2
       }
     },
@@ -10,10 +10,10 @@
       "splitarea": {
         "left": [
           {
-            "text": "The <strong>Gen3 Data Platform</strong> is a single web interface which allows visitors to <strong>discover, access and analyze data</strong>. Making data easily findable enables secondary, cross-study analyses, promotes dissemination of research and accelerates new discoveries."
+            "text": "Siloed data, manual processes, lack of standards, and research questions that are difficult to answer without larger data sets continue to obstruct further advances in monogenic diabetes research. The Precision Diabetes Consortium (PREDICT) was formed to break down these barriers. Led by the University of Chicago Kovler Diabetes Center in partnership with Data for the Common Good, PREDICT is a collaboration between monogenic diabetes research institutions to facilitate standardized data sharing. The goal is to generate a comprehensive, reusable dataset that can help to accelerate efficient diagnosis, advance progress in understanding, and inform clinical guidelines in the management of monogenic forms of diabetes."
           },
           {
-            "text": "The Gen3 platform consists of open-source software services that support the emergence of healthy data ecosystems by enabling the interoperation and creation of cloud-based data resources, including data commons and analysis workspaces. Gen3 aims to accelerate and democratize the process of scientific discovery by making it easy to manage, analyze, harmonize, and share large and complex datasets in the cloud."
+            "text": "Other info to add"
           },
           {
             "link": {
