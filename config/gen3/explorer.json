@@ -125,7 +125,6 @@
           "title": "Disease",
           "fields": [
             "DiseaseCharacteristics.diabetes_status",
-            "DiseaseCharacteristics.diet",
             "DiseaseCharacteristics.age_at_normalized",
             "DiseaseCharacteristics.age_unit",
             "DiseaseCharacteristics.age_precision",
