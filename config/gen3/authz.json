@@ -16,7 +16,7 @@
       "loginRequired": true
     },
     "*": {
-      "loginRequired": false
+      "loginRequired": true
     }
   }
 }
