@@ -9,6 +9,12 @@
     "/Profile": {
       "loginRequired": true
     },
+    "/Explorer": {
+      "loginRequired": true
+    },
+    "/Explorer/(.*)": {
+      "loginRequired": true
+    },
     "*": {
       "loginRequired": false
     }
