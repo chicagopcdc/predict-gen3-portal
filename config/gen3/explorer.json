@@ -1,22 +1,26 @@
 [
   {
-    "tabTitle": "PREDICT Subjects",
-    "charts": {
-      "Demographics.sex": {
-        "chartType": "horizontalStacked",
-        "title": "Sex"
+    "tabTitle": "Subjects",
+    "chartsSection": {
+      "enabled": true,
+      "title": "Summary",
+      "showLegends": {
+        "enabled": false,
+        "showSwitch": false
       },
-      "Demographics.race": {
-        "chartType": "horizontalStacked",
-        "title": "Race"
-      },
-      "Demographics.ethnicity": {
-        "chartType": "horizontalStacked",
-        "title": "Ethnicity"
-      },
-      "data_contributor_id": {
-        "chartType": "horizontalStacked",
-        "title": "Data Contributor"
+      "charts": {
+        "Demographics.sex": {
+          "chartType": "donut",
+          "title": "Sex"
+        },
+        "Demographics.race": {
+          "chartType": "horizontalStacked",
+          "title": "Race"
+        },
+        "Demographics.ethnicity": {
+          "chartType": "donut",
+          "title": "Ethnicity"
+        }
       }
     },
     "filters": {
@@ -175,7 +179,7 @@
     "loginForDownload": false,
     "guppyConfig": {
       "dataType": "subject",
-      "nodeCountTitle": "PREDICT Subjects",
+      "nodeCountTitle": "Subjects",
       "fieldMapping": [
         {
           "field": "honest_broker_subject_id",

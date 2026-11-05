@@ -1,7 +1,7 @@
 {
   "topContent": [
     {
-      "text": "Gen3 Data Commons",
+      "text": "PREDICT Data Commons",
       "className": "text-center text-3xl font-bold"
     },
     {
@@ -12,7 +12,7 @@
   "bottomContent": [
     {
       "type": "markdown",
-      "text": "If you have any questions about access or the registration process, please contact [gen3@datacommons.io](mailto:gen3@datacommons.io)",
+      "text": "If you have any questions about access or the registration process, please contact [predict_help@lists.uchicago.edu](mailto:predict_help@lists.uchicago.edu)",
       "className": "text-center text-sm"
     }
   ],

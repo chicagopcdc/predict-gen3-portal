@@ -2,42 +2,25 @@
   "body": [
     {
       "title": {
-        "text": "PREDICT Common",
-        "level": 2
+        "text": "PREDICT Data Commons",
+        "level": 1
       }
     },
     {
       "splitarea": {
-        "left": [
-          {
-            "text": "Siloed data, manual processes, lack of standards, and research questions that are difficult to answer without larger data sets continue to obstruct further advances in monogenic diabetes research. The Precision Diabetes Consortium (PREDICT) was formed to break down these barriers. Led by the University of Chicago Kovler Diabetes Center in partnership with Data for the Common Good, PREDICT is a collaboration between monogenic diabetes research institutions to facilitate standardized data sharing. The goal is to generate a comprehensive, reusable dataset that can help to accelerate efficient diagnosis, advance progress in understanding, and inform clinical guidelines in the management of monogenic forms of diabetes."
-          },
-          {
-            "text": "Other info to add"
-          },
-          {
-            "link": {
-              "href": "https://gen3.datacommons.io",
-              "text": "Learn More"
-            }
-          }
-        ],
         "right": [
           {
+            "text": "Siloed data, manual processes, lack of standards, and research questions that are difficult to answer without larger data sets continue to obstruct further advances in monogenic diabetes research. The Precision Diabetes Consortium (PREDICT) was formed to break down these barriers. Led by the University of Chicago Kovler Diabetes Center in partnership with Data for the Common Good, PREDICT is a collaboration between monogenic diabetes research institutions to facilitate standardized data sharing. The goal is to generate a comprehensive, reusable dataset that can help to accelerate efficient diagnosis, advance progress in understanding, and inform clinical guidelines in the management of monogenic forms of diabetes."
+          }
+        ],
+        "left": [
+          {
             "image": {
-              "src": "https://gen3.org/figs/kv.svg",
+              "src": "images/PREDICT.jpg",
               "alt": "Gen3 Data Platform"
             }
           }
         ]
-      }
-    },
-    {
-      "break": "standard"
-    },
-    {
-      "quoteArea": {
-        "quote": "Our vision is a world in which researchers have ready access to the data needed and the tools required to make data-driven discoveries that increase our scientific knowledge and improve the quality of life."
       }
     }
   ]

@@ -1,15 +1,15 @@
 {
   "navigation": {
-    "hideUnauthorizedLinks": false,
+    "hideUnauthorizedLinks": true,
     "classNames": {
       "root": "pl-1 mr-6 bg-base-max text-primary opacity-100 hover:opacity-100 data-disabled:opacity-35 data-disabled:hover:text-primary data-disabled:hover:opacity-35",
-      "item": "py-2 px-4 hover:bg-base-lightest hover:text-base-contrast",
-      "navigationPanel": "bg-base-max text-primary",
+      "buttons": "flex-none min-w-32 max-w-40",
+      "navigationPanel": "bg-base-max text-primary ml-auto justify-end",
       "icon": "data-disabled:opacity-50"
     },
     "logo": {
-      "src": "/icons/gen3-dark.svg",
-      "width": 120,
+      "src": "/icons/predict-data-commons.png",
+      "width": 385,
       "height": 60,
       "href": "/"
     },
@@ -38,29 +38,15 @@
         "tooltip": {
           "authorized": "Create API keys for programmatic data access, and review your authorization privileges to datasets and services."
         }
-      },
-      {
-        "icon": "gen3:profile",
-        "href": "/DataLibrary",
-        "name": "Data Library",
-        "tooltip": {
-          "authorized": "library of data"
-        }
       }
     ]
   },
   "topBar": {
     "items": [
-      {
-        "rightIcon": "gen3:upload",
-        "href": "/Submission",
-        "name": "Browse Data"
-      },
-      {
-        "href": "https://docs.gen3.org/",
-        "name": "Documentation"
-      }
     ],
+    "itemClassnames": {
+      "label": "text-xs"
+    },
     "loginButtonVisibility": "visible"
   }
 }

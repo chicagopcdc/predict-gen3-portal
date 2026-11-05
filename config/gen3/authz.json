@@ -1,11 +1,5 @@
 {
   "routes": {
-    "/DataLibrary": {
-      "loginRequired": true
-    },
-    "/Workspace": {
-      "loginRequired": true
-    },
     "/Profile": {
       "loginRequired": true
     },
