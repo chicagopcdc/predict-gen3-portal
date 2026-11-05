@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import AmanuensisCohortWorkspace from '../components/AmanuensisCohortWorkspace';
 import { Center } from '@mantine/core';
 import {
   ExplorerPageGetServerSideProps as getServerSideProps,
@@ -9,11 +9,6 @@ import {
 
 import { registerCohortTableCustomCellRenderers } from '@/lib/CohortBuilder/CustomCellRenderers';
 import { registerCustomExplorerDetailsPanels } from '@/lib/CohortBuilder/FileDetailsPanel';
-
-const CohortBuilder = dynamic(
-  () => import('@gen3/frontend').then((module) => module.CohortBuilder),
-  { ssr: false },
-);
 
 registerCohortTableCustomCellRenderers();
 registerCustomExplorerDetailsPanels();
@@ -40,13 +35,11 @@ export default function ExplorerPage({
       footerProps={footerProps}
       headerMetadata={headerMetadata}
     >
-      <div className="flex w-full flex-col">
-        <CohortBuilder
-          tabsLayout={tabsLayout}
-          explorerConfig={explorerConfig}
-          sharedFiltersMap={sharedFiltersMap}
-        />
-      </div>
+      <AmanuensisCohortWorkspace
+        tabsLayout={tabsLayout}
+        explorerConfig={explorerConfig}
+        sharedFiltersMap={sharedFiltersMap}
+      />
     </NavPageLayout>
   );
 }
