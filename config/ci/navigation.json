@@ -8,8 +8,8 @@
       "icon": "data-disabled:opacity-50"
     },
     "logo": {
-      "src": "/icons/gen3-dark.svg",
-      "width": 120,
+      "src": "/icons/predict-data-commons.png",
+      "width": 385,
       "height": 60,
       "href": "/"
     },
@@ -69,6 +69,9 @@
         "name": "Documentation"
       }
     ],
+    "itemClassnames": {
+      "label": "text-xs"
+    },
     "loginButtonVisibility": "visible"
   }
 }

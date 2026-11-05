@@ -1,22 +1,26 @@
 [
   {
-    "tabTitle": "PREDICT Subjects",
-    "charts": {
-      "Demographics.sex": {
-        "chartType": "horizontalStacked",
-        "title": "Sex"
+    "tabTitle": "Subjects",
+    "chartsSection": {
+      "enabled": true,
+      "title": "Summary",
+      "showLegends": {
+        "enabled": false,
+        "showSwitch": false
       },
-      "Demographics.race": {
-        "chartType": "horizontalStacked",
-        "title": "Race"
-      },
-      "Demographics.ethnicity": {
-        "chartType": "horizontalStacked",
-        "title": "Ethnicity"
-      },
-      "data_contributor_id": {
-        "chartType": "horizontalStacked",
-        "title": "Data Contributor"
+      "charts": {
+        "Demographics.sex": {
+          "chartType": "donut",
+          "title": "Sex"
+        },
+        "Demographics.race": {
+          "chartType": "horizontalStacked",
+          "title": "Race"
+        },
+        "Demographics.ethnicity": {
+          "chartType": "donut",
+          "title": "Ethnicity"
+        }
       }
     },
     "filters": {
@@ -25,10 +29,7 @@
           "title": "Subject",
           "fields": [
             "data_contributor_id",
-            "data_source",
             "last_known_survival_status",
-            "lkss_obfuscated",
-            "year_at_disease_phase",
             "age_last_contact_normalized"
           ]
         },
@@ -44,19 +45,81 @@
           "title": "Disease",
           "fields": [
             "DiseaseCharacteristics.diabetes_status",
-            "DiseaseCharacteristics.diet"
+            "DiseaseCharacteristics.hypoglycemia_frequency",
+            "DiseaseCharacteristics.severe_hypoglycemia_frequency",
+            "DiseaseCharacteristics.dka",
+            "DiseaseCharacteristics.time_in_range",
+            "DiseaseCharacteristics.cgm_range",
+            "DiseaseCharacteristics.age_at_normalized"
           ]
         },
         {
           "title": "Treatment",
           "fields": [
+            "Treatment.dm_medication_class",
             "Treatment.medication_name",
-            "Treatment.dm_medication_class"
+            "Treatment.age_at_start_normalized",
+            "Treatment.age_at_stop_normalized"
+          ]
+        },
+        {
+          "title": "Biospecimens",
+          "fields": [
+            "Biospecimen.sample_type"
+          ]
+        },
+        {
+          "title": "Genetic Analysis",
+          "fields": [
+            "GeneticAnalysis.age_at_normalized",
+            "GeneticAnalysis.causative_alteration",
+            "GeneticAnalysis.status",
+            "GeneticAnalysis.cytogenetic_location",
+            "GeneticAnalysis.gene",
+            "GeneticAnalysis.alteration_type",
+            "GeneticAnalysis.alteration_effect",
+            "GeneticAnalysis.alteration_region",
+            "GeneticAnalysis.hgvs_coding",
+            "GeneticAnalysis.hgvs_protein",
+            "GeneticAnalysis.hgvs_genomic",
+            "GeneticAnalysis.iscn",
+            "GeneticAnalysis.reported_significance",
+            "GeneticAnalysis.allelic_state",
+            "GeneticAnalysis.maf_numeric",
+            "GeneticAnalysis.mosaicism"
+          ]
+        },
+        {
+          "title": "Medical History",
+          "fields": [
+            "MedicalHistory.age_at_normalized",
+            "MedicalHistory.medical_history_condition"
+          ]
+        },
+        {
+          "title": "Family Medical History",
+          "fields": [
+            "FamilyMedicalHistory.relation",
+            "FamilyMedicalHistory.condition",
+            "FamilyMedicalHistory.source"
           ]
         },
         {
           "title": "Testing",
-          "fields": ["Testing.test_type", "Testing.result_interpretation"]
+          "fields": [
+            "Testing.age_at_normalized", 
+            "Testing.test_type", 
+            "Testing.result_numeric",
+            "Testing.result_unit",
+            "Testing.result_interpretation"
+          ]
+        },
+        {
+          "title": "Timing",
+          "fields": [
+            "Timing.timing_age_at_normalized",
+            "Timing.timepoint"
+          ]
         }
       ]
     },
@@ -83,7 +146,7 @@
     "loginForDownload": false,
     "guppyConfig": {
       "dataType": "subject",
-      "nodeCountTitle": "PREDICT Subjects",
+      "nodeCountTitle": "Subjects",
       "fieldMapping": [
         {
           "field": "honest_broker_subject_id",
@@ -100,14 +163,6 @@
         {
           "field": "last_known_survival_status",
           "name": "Last Known Survival Status"
-        },
-        {
-          "field": "lkss_obfuscated",
-          "name": "LKSS (obfuscated)"
-        },
-        {
-          "field": "year_at_disease_phase",
-          "name": "Year at Disease Phase"
         },
         {
           "field": "age_last_contact_normalized",
