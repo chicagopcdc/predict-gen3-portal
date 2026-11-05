@@ -31,8 +31,6 @@
             "data_contributor_id",
             "data_source",
             "last_known_survival_status",
-            "lkss_obfuscated",
-            "year_at_disease_phase",
             "age_last_contact_normalized"
           ]
         },
@@ -40,9 +38,7 @@
           "title": "Timing",
           "fields": [
             "Timing.timepoint",
-            "Timing.timing_age_at_normalized",
-            "Timing.age_unit",
-            "Timing.age_precision"
+            "Timing.timing_age_at_normalized"
           ]
         },
         {
@@ -65,8 +61,6 @@
           "title": "Medical History",
           "fields": [
             "MedicalHistory.age_at_normalized",
-            "MedicalHistory.age_unit",
-            "MedicalHistory.age_precision",
             "MedicalHistory.medical_history_condition"
           ]
         },
@@ -74,8 +68,6 @@
           "title": "Biometrics",
           "fields": [
             "Biometrics.age_at_normalized",
-            "Biometrics.age_unit",
-            "Biometrics.age_precision",
             "Biometrics.measurement_type",
             "Biometrics.measurement_numeric",
             "Biometrics.measurement_unit",
@@ -92,8 +84,6 @@
           "title": "Genetic Analysis",
           "fields": [
             "GeneticAnalysis.age_at_normalized",
-            "GeneticAnalysis.age_unit",
-            "GeneticAnalysis.age_precision",
             "GeneticAnalysis.causative_alteration",
             "GeneticAnalysis.status",
             "GeneticAnalysis.cytogenetic_location",
@@ -117,8 +107,6 @@
             "Testing.test_type",
             "Testing.result_interpretation",
             "Testing.age_at_normalized",
-            "Testing.age_unit",
-            "Testing.age_precision",
             "Testing.testing_measurement_type",
             "Testing.result_numeric",
             "Testing.result_unit",
@@ -130,8 +118,6 @@
           "fields": [
             "DiseaseCharacteristics.diabetes_status",
             "DiseaseCharacteristics.age_at_normalized",
-            "DiseaseCharacteristics.age_unit",
-            "DiseaseCharacteristics.age_precision",
             "DiseaseCharacteristics.hypoglycemia_frequency",
             "DiseaseCharacteristics.severe_hypoglycemia_frequency",
             "DiseaseCharacteristics.dka",
@@ -146,8 +132,6 @@
             "Treatment.dm_medication_class",
             "Treatment.age_at_start_normalized",
             "Treatment.age_at_stop_normalized",
-            "Treatment.age_unit",
-            "Treatment.age_precision",
             "Treatment.medication_code",
             "Treatment.medication_concentration",
             "Treatment.medication_dose",
@@ -166,8 +150,7 @@
         "data_contributor_id",
         "data_source",
         "last_known_survival_status",
-        "age_last_contact_normalized",
-        "year_at_disease_phase"
+        "age_last_contact_normalized"
       ],
       "columns": {
         "honest_broker_subject_id": {
@@ -196,14 +179,6 @@
         {
           "field": "last_known_survival_status",
           "name": "Last Known Survival Status"
-        },
-        {
-          "field": "lkss_obfuscated",
-          "name": "LKSS (obfuscated)"
-        },
-        {
-          "field": "year_at_disease_phase",
-          "name": "Year at Disease Phase"
         },
         {
           "field": "age_last_contact_normalized",
@@ -254,14 +229,6 @@
           "name": "Age At"
         },
         {
-          "field": "Timing.age_unit",
-          "name": "Age Unit"
-        },
-        {
-          "field": "Timing.age_precision",
-          "name": "Age Precision"
-        },
-        {
           "field": "FamilyMedicalHistory.relation",
           "name": "Relation"
         },
@@ -278,28 +245,12 @@
           "name": "Age At"
         },
         {
-          "field": "MedicalHistory.age_unit",
-          "name": "Age Unit"
-        },
-        {
-          "field": "MedicalHistory.age_precision",
-          "name": "Age Precision"
-        },
-        {
           "field": "MedicalHistory.medical_history_condition",
           "name": "Medical History Condition"
         },
         {
           "field": "Biometrics.age_at_normalized",
           "name": "Age At"
-        },
-        {
-          "field": "Biometrics.age_unit",
-          "name": "Age Unit"
-        },
-        {
-          "field": "Biometrics.age_precision",
-          "name": "Age Precision"
         },
         {
           "field": "Biometrics.measurement_type",
@@ -324,14 +275,6 @@
         {
           "field": "GeneticAnalysis.age_at_normalized",
           "name": "Age At"
-        },
-        {
-          "field": "GeneticAnalysis.age_unit",
-          "name": "Age Unit"
-        },
-        {
-          "field": "GeneticAnalysis.age_precision",
-          "name": "Age Precision"
         },
         {
           "field": "GeneticAnalysis.causative_alteration",
@@ -398,14 +341,6 @@
           "name": "Age At"
         },
         {
-          "field": "Testing.age_unit",
-          "name": "Age Unit"
-        },
-        {
-          "field": "Testing.age_precision",
-          "name": "Age Precision"
-        },
-        {
           "field": "Testing.testing_measurement_type",
           "name": "Testing Measurement Type"
         },
@@ -424,14 +359,6 @@
         {
           "field": "DiseaseCharacteristics.age_at_normalized",
           "name": "Age At"
-        },
-        {
-          "field": "DiseaseCharacteristics.age_unit",
-          "name": "Age Unit"
-        },
-        {
-          "field": "DiseaseCharacteristics.age_precision",
-          "name": "Age Precision"
         },
         {
           "field": "DiseaseCharacteristics.hypoglycemia_frequency",
@@ -460,14 +387,6 @@
         {
           "field": "Treatment.age_at_stop_normalized",
           "name": "Age At Stop"
-        },
-        {
-          "field": "Treatment.age_unit",
-          "name": "Age Unit"
-        },
-        {
-          "field": "Treatment.age_precision",
-          "name": "Age Precision"
         },
         {
           "field": "Treatment.medication_code",
