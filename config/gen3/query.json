@@ -1,2 +1,5 @@
 {
+  "graphQLEndpoints": [
+    { "url": "guppy/graphql", "label": "Flat" }
+  ]
 }

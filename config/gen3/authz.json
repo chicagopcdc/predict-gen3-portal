@@ -4,11 +4,13 @@
       "loginRequired": true
     },
     "/Explorer": {
-      "loginRequired": true,
-      "redirect403": ""
+      "loginRequired": true
+    },
+    "/Explorer/(.*)": {
+      "loginRequired": true
     },
     "*": {
-      "loginRequired": false
+      "loginRequired": true
     }
   }
 }

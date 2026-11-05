@@ -20,7 +20,8 @@
         "name": "Dictionary",
         "tooltip": {
           "authorized": "The Data Dictionary serves to inform the data model and is updated as new data is ingested."
-        }
+        },
+        "noBasePath": true
       },
       {
         "icon": "gen3:exploration",
