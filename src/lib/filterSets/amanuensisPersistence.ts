@@ -66,7 +66,11 @@ export function createAmanuensisCohortStore(explorerId: number) {
 
     async remove(cohort: Cohort): Promise<void> {
       const existing = saved.get(cohort.id);
-      if (!existing) return;
+      if (!existing) {
+        if (cohort.saved)
+          throw new Error('Missing Amanuensis ID for saved cohort.');
+        return;
+      }
 
       await deleteFilterSet(explorerId, existing.id);
       saved.delete(cohort.id);

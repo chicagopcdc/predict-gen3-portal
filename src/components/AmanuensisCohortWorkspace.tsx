@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { Center, Button } from '@mantine/core';
+import { Center, Button, Text } from '@mantine/core';
+import { modals } from '@mantine/modals';
 import {
   coreStore,
   createNewCohort,
+  removeCohort,
   selectCohortById,
   selectCurrentCohort,
   setCohortList,
@@ -56,6 +58,8 @@ export default function AmanuensisCohortWorkspace({
   const currentCohort = useCoreSelector(selectCurrentCohort);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!authReady) return;
@@ -67,6 +71,8 @@ export default function AmanuensisCohortWorkspace({
     setLoadError(null);
     setSaving(false);
     setSaveError(null);
+    setDeleting(false);
+    setDeleteError(null);
 
     const replaceCohorts = (cohorts: Cohort[]) => {
       // Gen3's setCohortList([]) only upserts; a null payload clears it.
@@ -106,7 +112,7 @@ export default function AmanuensisCohortWorkspace({
 
   const handleSave = async () => {
     const store = storeRef.current;
-    if (!store || !username || !currentCohort || saving) return;
+    if (!store || !username || !currentCohort || saving || deleting) return;
 
     setSaving(true);
     setSaveError(null);
@@ -141,6 +147,47 @@ export default function AmanuensisCohortWorkspace({
     }
   };
 
+  const handleDelete = () => {
+    const store = storeRef.current;
+    const cohort = currentCohort;
+
+    if (!store || !cohort || saving || deleting) return;
+    if (cohort.saved && !username) return;
+
+    modals.openConfirmModal({
+      title: `Delete filter set: ${cohort.name}`,
+      centered: true,
+      children: <Text size="sm">Delete this filter set?</Text>,
+      labels: { confirm: 'Delete', cancel: 'Cancel' },
+      confirmProps: { color: 'red' },
+      onConfirm: () => {
+        if (storeRef.current !== store) return;
+
+        setDeleting(true);
+        setDeleteError(null);
+
+        void store
+          .remove(cohort)
+          .then(() => {
+            if (storeRef.current === store) {
+              dispatch(
+                removeCohort({ id: cohort.id, shouldShowMessage: true }),
+              );
+            }
+          })
+          .catch((error: unknown) => {
+            if (storeRef.current === store) {
+              setDeleteError(
+                error instanceof Error ? error.message : String(error),
+              );
+            }
+          })
+          .finally(() => {
+            if (storeRef.current === store) setDeleting(false);
+          });
+      },
+    });
+  };
   if (loadError) {
     return <div role="alert">Could not load filter sets: {loadError}</div>;
   }
@@ -159,18 +206,36 @@ export default function AmanuensisCohortWorkspace({
           delete: false,
         }}
         customActions={
-          <Button
-            size="compact-md"
-            variant="action"
-            disabled={!username || !currentCohort || saving}
-            loading={saving}
-            onClick={() => void handleSave()}
-          >
-            {currentCohort?.saved ? 'Update Filter Set' : 'Save Filter Set'}
-          </Button>
+          <>
+            <Button
+              size="compact-md"
+              variant="action"
+              disabled={!username || !currentCohort || saving || deleting}
+              loading={saving}
+              onClick={() => void handleSave()}
+            >
+              {currentCohort?.saved ? 'Update Filter Set' : 'Save Filter Set'}
+            </Button>
+            <Button
+              size="compact-md"
+              variant="action"
+              color="red"
+              disabled={
+                !currentCohort ||
+                saving ||
+                deleting ||
+                (currentCohort.saved && !username)
+              }
+              loading={deleting}
+              onClick={handleDelete}
+            >
+              Delete Filter Set
+            </Button>
+          </>
         }
       />
       {saveError && <div role="alert">{saveError}</div>}
+      {deleteError && <div role="alert">{deleteError}</div>}
       <CohortBuilder
         enableCohortManager={false}
         tabsLayout={tabsLayout}
