@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { Center } from '@mantine/core';
+import { Center, Button } from '@mantine/core';
 import {
+  coreStore,
   createNewCohort,
+  selectCohortById,
+  selectCurrentCohort,
   setCohortList,
   setCurrentCohortId,
   useCoreDispatch,
+  useCoreSelector,
   useUserAuth,
   type Cohort,
 } from '@gen3/core';
@@ -49,6 +53,10 @@ export default function AmanuensisCohortWorkspace({
   const [loadedOwner, setLoadedOwner] = useState<string | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
 
+  const currentCohort = useCoreSelector(selectCurrentCohort);
+  const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
+
   useEffect(() => {
     if (!authReady) return;
 
@@ -57,6 +65,8 @@ export default function AmanuensisCohortWorkspace({
     storeRef.current = store;
     setLoadedOwner(null);
     setLoadError(null);
+    setSaving(false);
+    setSaveError(null);
 
     const replaceCohorts = (cohorts: Cohort[]) => {
       // Gen3's setCohortList([]) only upserts; a null payload clears it.
@@ -94,6 +104,43 @@ export default function AmanuensisCohortWorkspace({
     };
   }, [authReady, username, ownerKey, dispatch]);
 
+  const handleSave = async () => {
+    const store = storeRef.current;
+    if (!store || !username || !currentCohort || saving) return;
+
+    setSaving(true);
+    setSaveError(null);
+
+    try {
+      const snapshot = currentCohort;
+      const savedCohort = await store.save(snapshot);
+
+      if (storeRef.current === store) {
+        const latest = selectCohortById(coreStore.getState(), snapshot.id);
+        if (latest) {
+          const changedWhileSaving =
+            latest.name !== snapshot.name ||
+            latest.modifiedDatetime !== snapshot.modifiedDatetime ||
+            latest.filters !== snapshot.filters;
+
+          dispatch(
+            setCohortList([
+              changedWhileSaving
+                ? { ...latest, saved: true, modified: true }
+                : savedCohort,
+            ]),
+          );
+        }
+      }
+    } catch (error) {
+      if (storeRef.current === store) {
+        setSaveError(error instanceof Error ? error.message : String(error));
+      }
+    } finally {
+      if (storeRef.current === store) setSaving(false);
+    }
+  };
+
   if (loadError) {
     return <div role="alert">Could not load filter sets: {loadError}</div>;
   }
@@ -111,7 +158,19 @@ export default function AmanuensisCohortWorkspace({
           duplicate: true,
           delete: false,
         }}
+        customActions={
+          <Button
+            size="compact-md"
+            variant="action"
+            disabled={!username || !currentCohort || saving}
+            loading={saving}
+            onClick={() => void handleSave()}
+          >
+            {currentCohort?.saved ? 'Update Filter Set' : 'Save Filter Set'}
+          </Button>
+        }
       />
+      {saveError && <div role="alert">{saveError}</div>}
       <CohortBuilder
         enableCohortManager={false}
         tabsLayout={tabsLayout}
